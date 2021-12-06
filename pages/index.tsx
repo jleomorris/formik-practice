@@ -3,13 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 // Styling
 import homeStyles from '../styles/Home.module.css';
-// Components
-import PageContainer from '../components/PageContainer';
 // Animation
 import AnimationParent, {
   Variant,
 } from '../components/FramerMotion/AnimationParent';
+// Components
+import PageContainer from '../components/PageContainer';
 import AnimationChild from '../components/FramerMotion/AnimationChild';
+import SignupForm from '../components/SignUpForm';
 
 export default function Home() {
   return (
@@ -21,48 +22,14 @@ export default function Home() {
       </Head>
 
       <AnimationParent variant={Variant.PAGE}>
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col items-center justify-center'>
           <AnimationChild variant={Variant.FADEUP}>
-            <h1 className='text-8xl font-bold'>
-              <span className='text-purple-500'>NextJS Modern</span> Template
+            <h1 className='font-bold text-8xl'>
+              <span className='text-purple-500'>Formik</span> Practice
             </h1>
           </AnimationChild>
-          <section className='flex flex-wrap justify-center items-baseline mt-10'>
-            <AnimationChild variant={Variant.FADEUP}>
-              <ul className='my-5 sm:my-10 space-y-5 bg-white p-20 rounded-xl sm:mr-10 text-left list-disc shadow-md'>
-                <li className='text-3xl'>
-                  Update homepage at{' '}
-                  <code className={homeStyles.code}>pages/index.js</code>
-                </li>
-                <li className='text-3xl'>
-                  Add pages to{' '}
-                  <code className={homeStyles.code}>pages/...</code>
-                </li>
-                <li className='text-3xl'>
-                  Add redux slices to{' '}
-                  <code className={homeStyles.code}>redux/...</code>
-                </li>
-                <li className='text-3xl'>
-                  Add tests to{' '}
-                  <code className={homeStyles.code}>__tests__/...</code>
-                </li>
-              </ul>
-            </AnimationChild>
-
-            <AnimationChild variant={Variant.FADEUP}>
-              <div className='my-5 sm:my-10 space-y-5 bg-white p-20 rounded-xl shadow-md'>
-                <h2 className='text-left text-4xl font-bold'>Stack</h2>
-                <ul className='text-left space-y-5 list-disc'>
-                  <li className='text-3xl'>NextJS</li>
-                  <li className='text-3xl'>TailwindCSS</li>
-                  <li className='text-3xl'>Typescript</li>
-                  <li className='text-3xl'>Redux Toolkit</li>
-                  <li className='text-3xl'>Jest & React Testing Library</li>
-                </ul>
-              </div>
-            </AnimationChild>
-          </section>
         </div>
+        <SignupForm />
       </AnimationParent>
     </PageContainer>
   );
