@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         // initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
       >
-        <Nav />
+        {/* <Nav /> */}
         <Component {...pageProps} />
         <Footer />
       </AnimatePresence>
